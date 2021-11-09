@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:maydina_uts/pages/form.dart';
+import 'package:maydina_uts/pages/signin.dart';
 
 class Login extends StatelessWidget{
   @override
@@ -11,7 +13,7 @@ class Login extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/logo.png',
+                'assets/images/logo.png',
                 height: 200,
               ),
               Container(
@@ -39,7 +41,16 @@ class Login extends StatelessWidget{
               Container(
                 padding: EdgeInsets.only(top: 80),
                 child: ElevatedButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (BuildContext context) {
+                                    return Form_login();
+                                    },
+                                  )
+                    );
+                    },
                     child: Container(
                       padding: EdgeInsets.all(10),
                       child: Text(
@@ -62,25 +73,23 @@ class Login extends StatelessWidget{
                 children: [
                   Text("Already have an account? "),
                   GestureDetector(
-                    onTap: (){
-                      print("hallo");
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (BuildContext context) {
+                        return Signin();
+                      }));
                     },
                     child: Text(
                       "Sign In",
-                      style: TextStyle(
-                          color: Colors.purple
-                      ),
+                      style: TextStyle(color: Colors.purple),
                     ),
                   )
-
                 ],
               ),
-
             ],
           ),
         ),
       ),
     );
-
   }
 }
