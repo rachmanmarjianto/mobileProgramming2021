@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'regis.dart';
 
 class Login extends StatelessWidget{
   @override
@@ -39,7 +40,16 @@ class Login extends StatelessWidget{
               Container(
                 padding: EdgeInsets.only(top: 80),
                 child: ElevatedButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context){
+                          return Regis();
+                          },
+                        ),
+                      );
+                    },
                     child: Container(
                       padding: EdgeInsets.all(10),
                       child: Text(
