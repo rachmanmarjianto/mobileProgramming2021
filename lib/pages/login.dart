@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uts/pages/form_login.dart';
+import 'package:flutter_uts/pages/signin.dart';
 
-class Login extends StatelessWidget{
+class Login extends StatefulWidget {
+  loginState createState() => loginState();
+}
+
+class loginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,42 +24,38 @@ class Login extends StatelessWidget{
                 padding: EdgeInsets.only(top: 70),
                 child: Text(
                   "New Experience",
-                  style: new TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold
-                  ),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.only(top:20),
-                width: MediaQuery.of(context).size.width * 0.8,
-                child: Text(
-                  "Watch a new movie much easier than any before",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 20
-                  ),
+                  style:
+                      new TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
               ),
               Container(
                 padding: EdgeInsets.only(top: 80),
-                child: ElevatedButton(
-                    onPressed: (){},
+                width: MediaQuery.of(context).size.width * 0.8,
+                child: Text(
+                  "Watch a new movie much easier than any before",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                ),
+              ),
+              Container(
+                  padding: EdgeInsets.only(top: 80),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return Form_login();
+                        },
+                      ));
+                    },
                     child: Container(
                       padding: EdgeInsets.all(10),
                       child: Text(
                         "Get Started",
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
+                        style: TextStyle(fontSize: 20),
                       ),
                     ),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.purple
-                  ),
-                ),
-              ),
+                    style: ElevatedButton.styleFrom(primary: Colors.purple),
+                  )),
               Container(
                 padding: EdgeInsets.all(5),
               ),
@@ -62,25 +64,23 @@ class Login extends StatelessWidget{
                 children: [
                   Text("Already have an account? "),
                   GestureDetector(
-                    onTap: (){
-                      print("hallo");
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (BuildContext context) {
+                        return SignIn();
+                      }));
                     },
                     child: Text(
                       "Sign In",
-                      style: TextStyle(
-                          color: Colors.purple
-                      ),
+                      style: TextStyle(color: Colors.purple),
                     ),
                   )
-
                 ],
               ),
-
             ],
           ),
         ),
       ),
     );
-
   }
 }
