@@ -1,4 +1,4 @@
-package com.example.project_uts
+package com.example.nikmut_uts
 
 import io.flutter.embedding.android.FlutterActivity
 
