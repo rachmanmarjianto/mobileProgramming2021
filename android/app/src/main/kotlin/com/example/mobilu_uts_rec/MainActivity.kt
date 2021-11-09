@@ -1,4 +1,4 @@
-package com.example.project_uts
+package com.example.mobilu_uts_rec
 
 import io.flutter.embedding.android.FlutterActivity
 
