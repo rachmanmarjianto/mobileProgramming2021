@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:uts_017/pages/register.dart';
+import 'package:uts_017/pages/sign.dart';
 
 class Login extends StatelessWidget{
   @override
@@ -11,8 +13,8 @@ class Login extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/logo.png',
-                height: 200,
+                'assets/images/logo.png',
+                height: 200.0,
               ),
               Container(
                 padding: EdgeInsets.only(top: 70),
@@ -39,7 +41,16 @@ class Login extends StatelessWidget{
               Container(
                 padding: EdgeInsets.only(top: 80),
                 child: ElevatedButton(
-                    onPressed: (){},
+                    onPressed: (){
+                       Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) {
+                        return Login2();
+                        },
+                      )
+                    );
+                    },
                     child: Container(
                       padding: EdgeInsets.all(10),
                       child: Text(
@@ -56,6 +67,7 @@ class Login extends StatelessWidget{
               ),
               Container(
                 padding: EdgeInsets.all(5),
+                
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -63,7 +75,13 @@ class Login extends StatelessWidget{
                   Text("Already have an account? "),
                   GestureDetector(
                     onTap: (){
-                      print("hallo");
+                              Navigator.push(
+                              context, 
+                              MaterialPageRoute(
+                                builder: (context) => Sign_form()
+                              )
+                      );
+                     
                     },
                     child: Text(
                       "Sign In",
