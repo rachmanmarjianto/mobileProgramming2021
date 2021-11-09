@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:uts_mobile/pages/sign_up.dart';
+import 'package:uts_mobile/pages/login2.dart';
 
 class Login extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.deepPurple,
         body: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/logo.png',
+                'assets/film.png',
                 height: 200,
               ),
               Container(
@@ -20,6 +23,7 @@ class Login extends StatelessWidget{
                   "New Experience",
                   style: new TextStyle(
                       fontSize: 30,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold
                   ),
                 ),
@@ -31,26 +35,36 @@ class Login extends StatelessWidget{
                   "Watch a new movie much easier than any before",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 20
+                      color: Colors.grey,
+                      fontSize: 20
                   ),
                 ),
               ),
               Container(
                 padding: EdgeInsets.only(top: 80),
                 child: ElevatedButton(
-                    onPressed: (){},
-                    child: Container(
-                      padding: EdgeInsets.all(10),
-                      child: Text(
-                        "Get Started",
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context){
+                          return sign_up();
+                        },
+                      ),
+                    );
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      "Get Started",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
                       ),
                     ),
+                  ),
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.purple
+                      primary: Colors.white
                   ),
                 ),
               ),
@@ -60,15 +74,26 @@ class Login extends StatelessWidget{
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Already have an account? "),
+                  Text("Already have an account? ",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
                   GestureDetector(
                     onTap: (){
-                      print("hallo");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context){
+                            return login2();
+                          },
+                        ),
+                      );
                     },
                     child: Text(
                       "Sign In",
                       style: TextStyle(
-                          color: Colors.purple
+                          color: Colors.white70
                       ),
                     ),
                   )
