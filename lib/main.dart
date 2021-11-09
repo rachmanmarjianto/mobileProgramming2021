@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
               color: Colors.white
           ),
         ),
-        image: Image.asset('assets/unair_mbkm.png'),
+        image: Image.asset('assets/logoUnair.png'),
         photoSize: 100,
         backgroundColor: Colors.blue,
         loaderColor: Colors.white,
