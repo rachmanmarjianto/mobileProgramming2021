@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_uts/pages/sign_up.dart';
 
 class Login extends StatelessWidget{
   @override
@@ -31,26 +32,35 @@ class Login extends StatelessWidget{
                   "Watch a new movie much easier than any before",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 20
+                      color: Colors.grey,
+                      fontSize: 20
                   ),
                 ),
               ),
               Container(
                 padding: EdgeInsets.only(top: 80),
                 child: ElevatedButton(
-                    onPressed: (){},
-                    child: Container(
-                      padding: EdgeInsets.all(10),
-                      child: Text(
-                        "Get Started",
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context){
+                          return sign_up();
+                        },
+                      ),
+                    );
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      "Get Started",
+                      style: TextStyle(
+                        fontSize: 20,
                       ),
                     ),
+                  ),
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.purple
+                      primary: Colors.purple
                   ),
                 ),
               ),
