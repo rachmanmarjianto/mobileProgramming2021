@@ -13,23 +13,23 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        brightness: Brightness.light,
+        /* light theme settings */
       ),
       home: SplashScreen(
         seconds: 8,
         navigateAfterSeconds: Login(),
         title: new Text(
-          'Belajar Flutter',
+          'CINEMA STAR',
           style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20,
-              color: Colors.white
-          ),
+              color: Colors.redAccent),
         ),
-        image: Image.asset('assets/unair_mbkm.png'),
+        image: Image.asset('assets/cinema.png'),
         photoSize: 100,
-        backgroundColor: Colors.blue,
-        loaderColor: Colors.white,
+        backgroundColor: Colors.grey[850],
+        loaderColor: Colors.red,
       ),
     );
   }
