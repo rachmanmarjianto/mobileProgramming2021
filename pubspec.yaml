@@ -1,5 +1,5 @@
-name: project_uts
-description: A new Flutter application.
+name: uts_mobile_009
+description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -23,7 +23,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -52,6 +51,10 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/
+    - assets/images/logo.png
+    - assets/images/logoUnair.png
+    - assets/images/profile.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
