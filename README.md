@@ -1,6 +1,6 @@
-# project_uts
+# uts_mobile_009
 
-A new Flutter application.
+A new Flutter project.
 
 ## Getting Started
 
