@@ -21,12 +21,9 @@ class MyApp extends StatelessWidget {
         title: new Text(
           'Belajar Flutter',
           style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-              color: Colors.white
-          ),
+              fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
         ),
-        image: Image.asset('assets/unair_mbkm.png'),
+        image: Image.asset('assets/logoUnair.png'),
         photoSize: 100,
         backgroundColor: Colors.blue,
         loaderColor: Colors.white,
