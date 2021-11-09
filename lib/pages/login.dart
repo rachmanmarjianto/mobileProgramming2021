@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:project_uts/pages/sign_up.dart';
 
 class Login extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Center(
+        body: Container(
+          decoration: BoxDecoration(
+    gradient: LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [Colors.red.shade50, Colors.red.shade100])
+  ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/logo.png',
+                'assets/home-cinema.png',
                 height: 200,
               ),
               Container(
@@ -39,7 +46,12 @@ class Login extends StatelessWidget{
               Container(
                 padding: EdgeInsets.only(top: 80),
                 child: ElevatedButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+ MaterialPageRoute
+ (builder:(context) => sign_up()));
+                    },
                     child: Container(
                       padding: EdgeInsets.all(10),
                       child: Text(
@@ -50,7 +62,7 @@ class Login extends StatelessWidget{
                       ),
                     ),
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.purple
+                    primary: Colors.red.shade800
                   ),
                 ),
               ),
@@ -68,7 +80,7 @@ class Login extends StatelessWidget{
                     child: Text(
                       "Sign In",
                       style: TextStyle(
-                          color: Colors.purple
+                          color: Colors.red.shade800
                       ),
                     ),
                   )
