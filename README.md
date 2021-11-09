@@ -1,6 +1,6 @@
-# project_uts
+# mobilu_uts_rec
 
-A new Flutter application.
+A new Flutter project.
 
 ## Getting Started
 
