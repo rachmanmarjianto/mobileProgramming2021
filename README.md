@@ -1,4 +1,4 @@
-# project_uts
+# uts_mobile
 
 A new Flutter application.
 
