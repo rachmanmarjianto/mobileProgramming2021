@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: SplashScreen(
         seconds: 8,
@@ -26,9 +26,9 @@ class MyApp extends StatelessWidget {
               color: Colors.white
           ),
         ),
-        image: Image.asset('assets/unair_mbkm.png'),
+        image: Image.asset('assets/astronaut.png'),
         photoSize: 100,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.red.shade800,
         loaderColor: Colors.white,
       ),
     );
