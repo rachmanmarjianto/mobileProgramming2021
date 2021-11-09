@@ -1,6 +1,6 @@
-# project_uts
+# project_salsabila
 
-A new Flutter application.
+A new Flutter project.
 
 ## Getting Started
 
