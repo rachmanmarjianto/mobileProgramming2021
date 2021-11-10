@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
-import 'pages/login.dart';
+import 'pages/halAwalan.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -16,21 +17,22 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: SplashScreen(
-        seconds: 8,
-        navigateAfterSeconds: Login(),
+        seconds: 5,
+        navigateAfterSeconds: firstPage(),
         title: new Text(
-          'Belajar Flutter',
+            'Selamat Datang di Aplikasi Channel',
           style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-              color: Colors.white
+            fontWeight: FontWeight.bold,
+            fontSize: 26,
+            color: Colors.white
           ),
         ),
-        image: Image.asset('assets/unair_mbkm.png'),
-        photoSize: 100,
-        backgroundColor: Colors.blue,
+        image: Image.asset('assets/logoSplash.png'),
+        photoSize: 125,
+        backgroundColor: Colors.black,
         loaderColor: Colors.white,
       ),
     );
   }
 }
+
