@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'form.dart';
+import 'signin.dart';
 
 class Login extends StatelessWidget{
   @override
@@ -11,13 +13,13 @@ class Login extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/logo.png',
+                'assets/watching.png',
                 height: 200,
               ),
               Container(
                 padding: EdgeInsets.only(top: 70),
                 child: Text(
-                  "New Experience",
+                  "Nonton Bersama Makin Joss!",
                   style: new TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold
@@ -28,7 +30,7 @@ class Login extends StatelessWidget{
                 padding: EdgeInsets.only(top:20),
                 width: MediaQuery.of(context).size.width * 0.8,
                 child: Text(
-                  "Watch a new movie much easier than any before",
+                  "Film Keluarga Pilihan, Belum Pernah Sekeren ini loh!",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.grey,
@@ -39,18 +41,27 @@ class Login extends StatelessWidget{
               Container(
                 padding: EdgeInsets.only(top: 80),
                 child: ElevatedButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (BuildContext context) {
+                                    return Form_login();
+                                    },
+                                  )
+                    );
+                    },
                     child: Container(
                       padding: EdgeInsets.all(10),
                       child: Text(
-                        "Get Started",
+                        "Daftarkan Saya Sekarang",
                         style: TextStyle(
                           fontSize: 20,
                         ),
                       ),
                     ),
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.purple
+                    primary: Colors.green
                   ),
                 ),
               ),
@@ -60,27 +71,25 @@ class Login extends StatelessWidget{
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Already have an account? "),
+                  Text("Sudah Punya Akun? Login disini "),
                   GestureDetector(
-                    onTap: (){
-                      print("hallo");
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (BuildContext context) {
+                        return Signin();
+                      }));
                     },
                     child: Text(
-                      "Sign In",
-                      style: TextStyle(
-                          color: Colors.purple
-                      ),
+                      "Login",
+                      style: TextStyle(color: Colors.green),
                     ),
                   )
-
                 ],
               ),
-
             ],
           ),
         ),
       ),
     );
-
   }
 }
