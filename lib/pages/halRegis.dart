@@ -1,8 +1,15 @@
+import '/model/user.dart';
+import 'halPilih.dart';
+import 'PressLogin.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class registerPage extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
+  TextEditingController _nama = TextEditingController();
+  TextEditingController _email = TextEditingController();
+  TextEditingController _password = TextEditingController();
+  final user = User(nama: '', email: '', password: '');
   var confirmPass;
   @override
   Widget build(BuildContext context) {
@@ -44,16 +51,17 @@ class registerPage extends StatelessWidget {
                           Container(
                             padding: EdgeInsets.all(10),
                             child: TextFormField(
+                              controller: _nama,
                               autofocus: true,
                               keyboardType: TextInputType.text,
                               decoration: const InputDecoration(
-                                  labelText: 'Nama',
-                                  hintText: 'Enter Name Here',
+                                  labelText: 'Name',
+                                  hintText: 'Entry Name',
                                   icon: Icon(Icons.person),
                                   border: OutlineInputBorder()),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Name cannot be empty';
+                                  return 'Name cannot be null';
                                 }
                                 if (value.length > 100) {
                                   return 'Name is so long, max 50 characters';
@@ -65,15 +73,19 @@ class registerPage extends StatelessWidget {
                           Container(
                             padding: EdgeInsets.all(10),
                             child: TextFormField(
+                              controller: _email,
                               keyboardType: TextInputType.emailAddress,
                               decoration: const InputDecoration(
                                   labelText: 'Email',
-                                  hintText: 'Enter Email Here',
+                                  hintText: 'Entry Email',
                                   icon: Icon(Icons.email),
                                   border: OutlineInputBorder()),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Email cannot be empty';
+                                  return 'Email cannot be null';
+                                }
+                                if (!value.contains("@")) {
+                                  return 'Email use @';
                                 }
                                 if (value.length > 50) {
                                   return 'Email is so long, max 50 characters';
@@ -85,17 +97,18 @@ class registerPage extends StatelessWidget {
                           Container(
                             padding: EdgeInsets.all(10),
                             child: TextFormField(
+                              controller: _password,
                               obscureText: true,
                               decoration: const InputDecoration(
                                   labelText: 'Password',
-                                  hintText: 'Enter Password Here',
+                                  hintText: 'Entry password',
                                   icon: Icon(Icons.admin_panel_settings_sharp),
                                   border: OutlineInputBorder()),
                               validator: (value) {
                                 //validasi input
                                 confirmPass = value;
                                 if (value == null || value.isEmpty) {
-                                  return 'Password cannot be empty';
+                                  return 'Password cannot be null';
                                 }
                                 if (value.length < 8) {
                                   return 'Password must be atleast 8 characters long';
@@ -115,7 +128,7 @@ class registerPage extends StatelessWidget {
                                   border: OutlineInputBorder()),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Confirm password cannot be empty';
+                                  return 'Confirm Password cannot be null';
                                 }
                                 if (value.length < 8) {
                                   return 'Password must be atleast 8 characters long';
@@ -132,13 +145,20 @@ class registerPage extends StatelessWidget {
                             child: ElevatedButton(
                               onPressed: () {
                                 if (_formKey.currentState!.validate()) {
+                                  user.nama = _nama.text;
+                                  user.email = _email.text;
+                                  user.password = _password.text;
                                   // If the form is valid, display a snackbar. In the real world,
                                   // you'd often call a server or save the information in a database.
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
-                                        content:
-                                            Text('Processing Data Register')),
-                                  );
+                                  /*
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      const SnackBar(content: Text('Processing Data Register')),
+                                    );
+                                     */
+                                  Navigator.push(context, MaterialPageRoute(
+                                      builder: (BuildContext context) {
+                                    return PressLogin(user: user);
+                                  }));
                                 }
                               },
                               child: Icon(Icons.arrow_forward_sharp,
@@ -147,7 +167,7 @@ class registerPage extends StatelessWidget {
                                 shape: CircleBorder(),
                                 padding: EdgeInsets.all(20),
                                 primary: Colors.red[900],
-                                onPrimary: Colors.blueGrey,
+                                onPrimary: Colors.red[100],
                               ),
                             ),
                           )
